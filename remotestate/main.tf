@@ -8,6 +8,7 @@ provider "google" {
 resource "google_storage_bucket" "environment_buckets" {
   name = "remotestate_${var.project-id}"
   location = "US"
+  force_destroy = true
   versioning {
     enabled = true
   }
