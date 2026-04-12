@@ -6,7 +6,7 @@ variable "project-id" {
 variable "org_id" {
   type = string
   default = ""
-  sensitive = true
+  # sensitive = true
 }
 
 variable "region" {
@@ -66,7 +66,7 @@ variable "environment_map" {
 variable "environment_machine_type" {
   type = map(string)
   default = {
-    "DEV" = "f1-micro",
+    "DEV" = "e1-micro",
     "QA" = "e2-micro",
     "STAGE" = "e2-micro",
     "PROD" = "e2-medium"
@@ -77,7 +77,7 @@ variable "environment_instance_settings" {
   type = map(object({machine_type=string, labels=map(string)}))
   default = {
     "DEV" = {
-      machine_type = "f1-micro"
+      machine_type = "e1-micro"
       labels = {
         environment = "dev"
       }
